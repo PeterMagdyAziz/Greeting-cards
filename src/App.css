@@ -1,0 +1,74 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
+  height: 100vh;
+}
+
+label{
+  font-size: larger;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input[type = "email"],
+input[type = "password"]{
+  min-width: 400px;
+  min-height: 30px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+button[type="button"]{
+  font-size: large;
+  color: white;
+  background-color: darkslategray;
+  width: 35px;
+  height: 35px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+button[type="submit"]{
+    
+  font-size: large;
+  font-weight: bold;
+  color: white;
+  background-color: darkslategray;
+  height: 40px;
+  margin-left: 100px;
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+button[type="button"]:hover,
+button[type="submit"]:hover{
+  color: white;
+  background-color: teal;
+}
+
+.error{
+  color: red;
+}
+
+.sent{
+  font-size: 30px;
+  color: crimson;
+}
+
+.verify{
+  font-size: 30px;
+  color: red;
+}
+
+.title{
+  background-color: rgb(5, 5, 206);
+  font-size: 60px;
+  padding: 20px;
+  border-radius: 25px;
+  border: 2px solid black;
+}
