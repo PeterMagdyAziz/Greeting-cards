@@ -2,14 +2,24 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
+var cloudinary = require('cloudinary').v2;
+
+cloudinary.config({
+    cloud_name: "petergreetingimagescloud",
+    api_key: "836476119276936",
+    api_secret: "9mK7Kerpkyrr3PML3nIjHs0Gm58",
+});
+
+
 const app = express();
 
-app.listen(4003);
+app.listen(4005);
 
 const mailjet = require ('node-mailjet').connect('6ed5b78c98ce9d6ec1b0b1b0d4e67dff', '857d270c253e70a02d36bd58d3b71faa')
-
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use(cors());
-app.use(bodyParser.json());
+
 
 
 app.post("/sendmail", (req, res)=>{
@@ -39,10 +49,14 @@ app.post("/sendmail", (req, res)=>{
                 "Name": "Peter"
             },
             "To": req.body.receivers.map((receiver)=>{ return {Email: receiver}}),
-            "Subject": "Greetings from Mailjet.",
-            "TextPart": "My first Mailjet email",
-            "HTMLPart": "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
-            "CustomID": "AppGettingStartedTest"
+            "TemplateID": 2267890,
+            "TemplateLanguage": true,
+            "Subject": "Greets",
+            "Variables": {
+                    "greet": "Happy Birthday",
+                    "text": "enjoy",
+                    "image": ""
+            }
             }
         ]
         })
@@ -57,3 +71,4 @@ app.post("/sendmail", (req, res)=>{
         })
     })
 })
+

@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   background-color: aqua;
-  height: 100vh;
+  min-height:100vh;
 }
 
 label{
@@ -15,11 +15,21 @@ label{
 }
 
 input[type = "email"],
-input[type = "password"]{
+input[type = "password"],
+input[type = "text"],
+input[type = "url"]{
   min-width: 400px;
   min-height: 30px;
   margin-bottom: 10px;
   border-radius: 5px;
+}
+
+form{
+  min-width: 1000px;
+}
+
+img {
+  float: right;
 }
 
 button[type="button"]{
@@ -39,8 +49,7 @@ button[type="submit"]{
   color: white;
   background-color: darkslategray;
   height: 40px;
-  margin-left: 100px;
-  margin-top: 30px;
+  margin: 50px;
   padding: 10px;
   border-radius: 10px;
 }
@@ -49,6 +58,19 @@ button[type="button"]:hover,
 button[type="submit"]:hover{
   color: white;
   background-color: teal;
+}
+
+legend {
+  font-size: larger;
+  font-weight: bold;
+  background-color: rgb(104, 104, 104);
+  color: white;
+  padding: 5px 10px;
+  margin-bottom: 30px;
+}
+
+.card-fields{
+  padding: 20px;
 }
 
 .error{

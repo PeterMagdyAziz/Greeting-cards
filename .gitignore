@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 server/node_modules
+
+src/components/Upload.js
+src/components/MyUpload.js
