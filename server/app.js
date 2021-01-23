@@ -2,73 +2,66 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
-var cloudinary = require('cloudinary').v2;
-
-cloudinary.config({
-    cloud_name: "petergreetingimagescloud",
-    api_key: "836476119276936",
-    api_secret: "9mK7Kerpkyrr3PML3nIjHs0Gm58",
-});
-
 
 const app = express();
 
 app.listen(4005);
 
 const mailjet = require ('node-mailjet').connect('6ed5b78c98ce9d6ec1b0b1b0d4e67dff', '857d270c253e70a02d36bd58d3b71faa')
-app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ limit: '50mb', extended: true }));
+app.use(bodyParser.json());
 app.use(cors());
 
 
-
+// route for sending the email
 app.post("/sendmail", (req, res)=>{
-    console.log(req.body)
+
+    // first check mail is verified by site or not
     const request = mailjet
 	.post("sender", {'version': 'v3'})
-	.id(req.body.sender)
+	.id(req.body.senderEmail)
 	.action("validate")
 	.request()
+    
     request
 	.then((result) => {
-        // to send verification email to a user 
+        // to send verification email to a user and he will be able to send again
         console.log("varified", result.body)
-        res.send("verify")
+        res.send("verify") // response sent to front-end used as keyword to implement the verify message on screen
 	})
 	.catch((err) => {
-        // for valid emails it will send directly
-        console.log( "error" ,err.statusCode)
 
+        // for valid emails it will send directly
         const sendmsg = mailjet
         .post("send", {'version': 'v3.1'})
         .request({
         "Messages":[
             {
-            "From": {
-                "Email": req.body.sender,
-                "Name": "Peter"
-            },
-            "To": req.body.receivers.map((receiver)=>{ return {Email: receiver}}),
-            "TemplateID": 2267890,
-            "TemplateLanguage": true,
-            "Subject": "Greets",
-            "Variables": {
-                    "greet": "Happy Birthday",
-                    "text": "enjoy",
-                    "image": ""
-            }
+                // sender mail and name
+                "From": {
+					"Email": req.body.senderEmail,
+					"name": req.body.senderName,
+                },
+				"To": req.body.receivers.map((receiver)=>{ return {Email: receiver}}), // sender mail
+				"TemplateID": 2267890, // id template made in mailjet
+				"TemplateLanguage": true,
+				"Subject": req.body.subject, // setting a subject to email  
+				"Variables": {
+                    "greet": req.body.title, // setting card title
+                    "text": req.body.textmsg, // setting card text 
+                    "image": req.body.image, // setting card image
+                }
             }
         ]
-        })
+    })
+     
         sendmsg
         .then((result) => {
             console.log("recieved",result.body)
-            res.send("sent")
+            res.send("sent") // response sent to front-end used as keyword to implement the sent message on screen
         })
         .catch((errors) => {
-            console.log(errors.statusCode)
+            console.log("error",errors.statusCode)
             res.send("error")
         })
     })
 })
-

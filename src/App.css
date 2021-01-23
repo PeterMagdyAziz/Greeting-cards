@@ -28,7 +28,7 @@ form{
   min-width: 1000px;
 }
 
-img {
+.img-container {
   float: right;
 }
 
