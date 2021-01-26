@@ -25,6 +25,7 @@ const onSubmit = (values, onSubmitProps)=>{
     console.log(values);
     successful = false;
     verify = false;
+    // TODO use sendMail function from mailApi.
     axios.post('http://localhost:4005/sendmail', values)
       .then((res) =>{
 
@@ -76,6 +77,7 @@ function MyForm() {
                     return (
                         <Form className="form-container">
 
+                                {/* TODO Remove From section */}
                                 <h1>From:</h1>
                                 {/**field for sender e-mail */}
                                 <div className="field-style">

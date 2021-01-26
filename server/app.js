@@ -15,6 +15,7 @@ app.use(cors());
 // route for sending the email
 app.post("/sendmail", (req, res)=>{
 
+    // TODO Data validation
     // first check mail is verified by site or not
     const request = mailjet
 	.post("sender", {'version': 'v3'})
