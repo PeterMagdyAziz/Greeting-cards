@@ -12,57 +12,43 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
-// route for sending the email
-app.post("/sendmail", (req, res)=>{
 
-    // TODO Data validation
-    // first check mail is verified by site or not
-    const request = mailjet
-	.post("sender", {'version': 'v3'})
-	.id(req.body.senderEmail)
-	.action("validate")
-	.request()
+app.post("/send", (req, res)=>{
+
+     // TODO Data validation
+
     
-    request
-	.then((result) => {
-        // to send verification email to a user and he will be able to send again
-        console.log("varified", result.body)
-        res.send("verify") // response sent to front-end used as keyword to implement the verify message on screen
-	})
-	.catch((err) => {
 
-        // for valid emails it will send directly
-        const sendmsg = mailjet
-        .post("send", {'version': 'v3.1'})
-        .request({
+    console.log("server values", req.body)
+
+    
+    const request = mailjet
+    .post("send", {'version': 'v3.1'})
+    .request({
         "Messages":[
             {
-                // sender mail and name
                 "From": {
-					"Email": req.body.senderEmail,
-					"name": req.body.senderName,
+                    "Email": "peter_magdy93@hotmail.com",
+                    "Name": "Peter"
                 },
-				"To": req.body.receivers.map((receiver)=>{ return {Email: receiver}}), // sender mail
-				"TemplateID": 2267890, // id template made in mailjet
-				"TemplateLanguage": true,
-				"Subject": req.body.subject, // setting a subject to email  
+                "To": req.body.receivers.map((receiver)=>{ return {Email: receiver}}),
+                "TemplateID": 2267890,
+                "TemplateLanguage": true,
+                "Subject": req.body.subject, // setting a subject to email  
 				"Variables": {
-                    "greet": req.body.title, // setting card title
-                    "text": req.body.textmsg, // setting card text 
                     "image": req.body.image, // setting card image
+                    "text": req.body.textmsg, // setting card text 
                 }
             }
         ]
     })
-     
-        sendmsg
-        .then((result) => {
-            console.log("recieved",result.body)
-            res.send("sent") // response sent to front-end used as keyword to implement the sent message on screen
-        })
-        .catch((errors) => {
-            console.log("error",errors.statusCode)
-            res.send("error")
-        })
+    request
+    .then((result) => {
+        console.log("recieved",result.body)
+        res.send(true) // response sent to front-end used as keyword to implement the sent message on screen
+    })
+    .catch((err) => {
+        console.log(err.statusCode)
+        res.send("error")
     })
 })

@@ -4,8 +4,6 @@ import Title from './components/Title';
 
 function App() {
 
-  document.title = "Greeting Cards";
-
   return (
     <div className="App">
       <Title/>

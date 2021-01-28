@@ -3,34 +3,35 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: aqua;
-  min-height:100vh;
+
+}
+
+.title{
+  background-color: rgb(232, 232, 243);
+  font-size: 50px;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid black;
+  min-width: 100vw;
+  margin-top: 1px;
 }
 
 label{
-  font-size: larger;
+  font-size: medium;
   font-weight: bold;
   margin-bottom: 5px;
   display: block;
 }
 
 input[type = "email"],
-input[type = "password"],
 input[type = "text"],
 input[type = "url"]{
-  min-width: 400px;
+  min-width: 500px;
   min-height: 30px;
   margin-bottom: 10px;
   border-radius: 5px;
 }
 
-form{
-  min-width: 1000px;
-}
-
-.img-container {
-  float: right;
-}
 
 button[type="button"]{
   font-size: large;
@@ -43,7 +44,6 @@ button[type="button"]{
 }
 
 button[type="submit"]{
-    
   font-size: large;
   font-weight: bold;
   color: white;
@@ -51,6 +51,8 @@ button[type="submit"]{
   height: 40px;
   margin: 50px;
   padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   border-radius: 10px;
 }
 
@@ -60,21 +62,11 @@ button[type="submit"]:hover{
   background-color: teal;
 }
 
-legend {
-  font-size: larger;
-  font-weight: bold;
-  background-color: rgb(104, 104, 104);
-  color: white;
-  padding: 5px 10px;
-  margin-bottom: 30px;
-}
-
-.card-fields{
-  padding: 20px;
-}
 
 .error{
   color: red;
+  font-weight: bold;
+  margin: 10px;
 }
 
 .sent{
@@ -82,15 +74,4 @@ legend {
   color: crimson;
 }
 
-.verify{
-  font-size: 30px;
-  color: red;
-}
 
-.title{
-  background-color: rgb(5, 5, 206);
-  font-size: 60px;
-  padding: 20px;
-  border-radius: 25px;
-  border: 2px solid black;
-}
