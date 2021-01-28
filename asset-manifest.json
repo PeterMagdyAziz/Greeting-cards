@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Greeting-cards/static/css/main.debd2fcc.chunk.css",
+    "main.js": "/Greeting-cards/static/js/main.dc729a84.chunk.js",
+    "main.js.map": "/Greeting-cards/static/js/main.dc729a84.chunk.js.map",
+    "runtime-main.js": "/Greeting-cards/static/js/runtime-main.195f0e28.js",
+    "runtime-main.js.map": "/Greeting-cards/static/js/runtime-main.195f0e28.js.map",
+    "static/js/2.87b15b80.chunk.js": "/Greeting-cards/static/js/2.87b15b80.chunk.js",
+    "static/js/2.87b15b80.chunk.js.map": "/Greeting-cards/static/js/2.87b15b80.chunk.js.map",
+    "static/js/3.30f3ddc3.chunk.js": "/Greeting-cards/static/js/3.30f3ddc3.chunk.js",
+    "static/js/3.30f3ddc3.chunk.js.map": "/Greeting-cards/static/js/3.30f3ddc3.chunk.js.map",
+    "index.html": "/Greeting-cards/index.html",
+    "static/css/main.debd2fcc.chunk.css.map": "/Greeting-cards/static/css/main.debd2fcc.chunk.css.map",
+    "static/js/2.87b15b80.chunk.js.LICENSE.txt": "/Greeting-cards/static/js/2.87b15b80.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.195f0e28.js",
+    "static/js/2.87b15b80.chunk.js",
+    "static/css/main.debd2fcc.chunk.css",
+    "static/js/main.dc729a84.chunk.js"
+  ]
+}
