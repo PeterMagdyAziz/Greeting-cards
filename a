@@ -1,0 +1,53 @@
+[33mcommit 49d4707160fb47d0cb785034f7d1be96a7e9c43a[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31mPeter/main[m[33m)[m
+Author: “Peter <“peter_magdy93@hotmail.com”>
+Date:   Thu Jan 28 03:19:20 2021 +0200
+
+    commit deploy
+
+[33mcommit 20051480eaed84e3dfc839c08bbfb7ab0f11361e[m
+Author: “Peter <“peter_magdy93@hotmail.com”>
+Date:   Thu Jan 28 03:14:14 2021 +0200
+
+    deploy web app
+
+[33mcommit 5b0b009f8f126994649c1f5867334d81fa730845[m
+Author: “Peter <“peter_magdy93@hotmail.com”>
+Date:   Thu Jan 28 03:12:17 2021 +0200
+
+    deploy web app
+
+[33mcommit 66bf2f13bf5b39422cfcb91a0c4bac0a578f1d8a[m
+Author: “Peter <“peter_magdy93@hotmail.com”>
+Date:   Thu Jan 28 02:27:15 2021 +0200
+
+    check to do list
+
+[33mcommit 45c02b2923a3966fca9d613a3f293dc02847d5a5[m
+Author: Bichoy Messiha <Bichoy.messiha@gmail.com>
+Date:   Tue Jan 26 19:36:15 2021 +0200
+
+    chore: add todos
+
+[33mcommit 6ffcb95d859a8deea0b6c1b3e00ab346effc0de8[m
+Author: Bichoy Messiha <Bichoy.messiha@gmail.com>
+Date:   Tue Jan 26 19:16:04 2021 +0200
+
+    chore: add node-mailjet
+
+[33mcommit 6ffa3dea1f07791750fd30625cac0a90b6c48340[m
+Author: “Peter <“peter_magdy93@hotmail.com”>
+Date:   Sat Jan 23 22:33:28 2021 +0200
+
+    Adding more form fields and updating the server app
+
+[33mcommit e2f638004cfccc5a94ba0612021751cc8d447e7a[m
+Author: “Peter <“peter_magdy93@hotmail.com”>
+Date:   Sat Jan 23 19:32:41 2021 +0200
+
+    final front-end editing
+
+[33mcommit 9dbd45f509e22c9d2ad2fdfac823b863c155b776[m
+Author: “Peter <“peter_magdy93@hotmail.com”>
+Date:   Thu Jan 21 17:26:21 2021 +0200
+
+    sending a basic e-mail without a template

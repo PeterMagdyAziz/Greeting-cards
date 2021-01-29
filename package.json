@@ -1,5 +1,8 @@
 {
+<<<<<<< HEAD
   "homepage": "https://PeterMagdyAziz.github.io/Greeting-cards",
+=======
+>>>>>>> master
   "name": "greetings-card",
   "version": "0.1.0",
   "private": true,
@@ -10,7 +13,10 @@
     "axios": "^0.21.1",
     "cloudinary": "^1.23.0",
     "formik": "^2.2.6",
+<<<<<<< HEAD
     "gh-pages": "^3.1.0",
+=======
+>>>>>>> master
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
@@ -18,8 +24,11 @@
     "yup": "^0.32.8"
   },
   "scripts": {
+<<<<<<< HEAD
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+=======
+>>>>>>> master
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
